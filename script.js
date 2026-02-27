@@ -1,43 +1,53 @@
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
         {
-            name: "Le tiramisu classique",
-            description: "La saveur intemporelle, notre recette signature",
-            price: "150 DA",
-            characterClass: "classic" // For character styling, but using grid image for now
+            name: "Tiramisu Classique",
+            image: "images/tiramisu_classique.png",
+            description: "L'original : Café intense et cacao fondant."
+        },
+        {
+            name: "Tiramisu Fraise",
+            image: "images/tiramisu_fraise.png",
+            description: "Fraîcheur fruitée avec de vrais morceaux de fraise."
         },
         {
             name: "Tiramisu Pistache",
-            description: "Au parfum de pistache sicilienne, pour un goût unique",
-            price: "150 DA",
-            characterClass: "pistachio"
+            image: "images/tiramisu_pistache.png",
+            description: "Crème onctueuse à la pistache véritable."
+        },
+        {
+            name: "Tiramisu Bueno",
+            image: "images/tiramisu_bueno.png",
+            description: "Le goût irrésistible de la noisette et du chocolat."
         },
         {
             name: "Tiramisu Citron",
-            description: "Zeste de fraîcheur et notes acidulées, léger et délicieux",
-            price: "150 DA",
-            characterClass: "lemon"
+            image: "images/tiramisu_citron.png",
+            description: "Léger, aérien et délicieusement acidulé."
         },
         {
             name: "Tiramisu Orange",
-            description: "Douceur de l'orange, une association gourmande",
-            price: "150 DA",
-            characterClass: "orange"
+            image: "images/tiramisu_orange.png",
+            description: "Une harmonie douce et parfumée à l'orange."
         }
     ];
 
-    const productsContainer = document.querySelector('.products-container');
+    const container = document.querySelector('.products-container');
+    const pricePerUnit = "150 DA";
 
-    // For simplicity, we are displaying the complete grid layout image.
-    // However, if you add individual product images, this script is ready to generate the cards.
-    // Let's add the image of the complete grid to this container.
+    // Loop through the 6 products and create the HTML for each
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('product-card');
 
-    const gridImage = document.createElement('img');
-    gridImage.src = 'images/products_grid.png';
-    gridImage.alt = 'Notre Collection de Tiramisu';
-    gridImage.classList.add('products-grid-image');
-    gridImage.style.maxWidth = '100%';
-    gridImage.style.height = 'auto';
-
-    productsContainer.appendChild(gridImage);
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <div class="price">${pricePerUnit}</div>
+            <button class="order-btn" onclick="window.location.href='about.html'">Commander</button>
+        `;
+        
+        container.appendChild(card);
+    });
 });

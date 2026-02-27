@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f6f1; /* Light cream background */
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #8c7b6c; /* Warm, rich brown */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 2px solid #e1e1e1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #a69b8f; /* Accent light brown */
+}
+
+/* Header and Footer */
+header, footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #a69b8f;
+    font-style: italic;
+}
+
+footer {
+    border-top: 1px solid #e1e1e1;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Home Hero Section */
+.home-hero .hero-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Products Container */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    width: 250px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 1.3em;
+}
+
+.product-card .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #a69b8f;
+    margin: 10px 0;
+}
+
+/* About Us Section */
+.about-us-container {
+    padding: 20px;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

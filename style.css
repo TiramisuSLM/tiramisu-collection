@@ -94,3 +94,17 @@ nav ul li a {
 .order-btn:hover {
     background-color: #3E2723;
 }
+
+.order-btn {
+    background-color: #25D366; /* WhatsApp Green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px auto 0;
+}
+
+.order-btn:hover {
+    background-color: #128C7E; /* Darker WhatsApp Green */
+    transform: scale(1.05);
+}

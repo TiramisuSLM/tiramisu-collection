@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Your WhatsApp number in international format (Algeria +213)
+    // Your WhatsApp number (Algeria +213, no leading 0)
     const whatsappNumber = "213770542266"; 
+    const pricePerUnit = "150 DA";
 
     const products = [
         {
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Tiramisu Bueno",
             image: "images/tiramisu_bueno.png",
-            description: "Le goût irrésistible de la noisette et du chocolat."
+            description: "Le plaisir gourmand du chocolat et de la noisette."
         },
         {
             name: "Tiramisu Citron",
@@ -36,26 +37,33 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const container = document.querySelector('.products-container');
-    const pricePerUnit = "150 DA";
 
+    // Create cards one by one
     products.forEach(product => {
+        // 1. Create the Card Element
         const card = document.createElement('div');
         card.classList.add('product-card');
 
-        // This creates a custom message for each product
-        const message = encodeURIComponent(`Bonjour ! Je souhaiterais commander le ${product.name}. Pouvez-vous me donner plus d'informations ?`);
-        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
-
+        // 2. Add the inner HTML (Removed the onclick from here)
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <div class="price">${pricePerUnit}</div>
-            <button class="order-btn" onclick="window.open('${whatsappLink}', '_blank')">
-                Commander via WhatsApp
-            </button>
+            <button class="order-btn">Commander via WhatsApp</button>
         `;
-        
+
+        // 3. Add the Event Listener to the button specifically
+        const button = card.querySelector('.order-btn');
+        button.addEventListener('click', function() {
+            const message = encodeURIComponent(`Bonjour Tiramisu SLM ! Je souhaiterais commander le ${product.name}. Pouvez-vous me confirmer la disponibilité ?`);
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappLink, '_blank');
+        });
+
+        // 4. Put the card in the container
         container.appendChild(card);
     });
 });

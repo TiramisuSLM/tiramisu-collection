@@ -1,7 +1,23 @@
-/* General Styles */
+/* General Styles with Responsive Background Pattern */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/tiramisu_pattern.png');
+    
+    /* 1. Essential: Make it seamless and tileable */
+    background-repeat: repeat;
+    
+    /* 2. Responsive scaling: Sets the pattern size relative to the screen */
+    background-size: 400px; /* Adjust this number (e.g., to 300px) for a smaller pattern */
+    
+    /* 3. Perfect Centering: Ensures the pattern looks balanced on all screens */
+    background-position: center;
+    
+    /* 4. Keeps the background static while scrolling (looks more professional) */
+    background-attachment: fixed;
+    
+    /* 5. Inviting, warm cream/off-white (fallback if image doesn't load) */
     background-color: #f9f6f1;
+    
     margin: 0;
     padding: 0;
     color: #4a4a4a;
